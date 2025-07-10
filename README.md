@@ -196,24 +196,3 @@ If you encounter any issues:
 2. Ensure all dependencies are installed
 3. Check the browser console and server logs for errors
 4. Open an issue with detailed error information
-
-## 🎯 Future Enhancements
-
-- [ ] User accounts and progress tracking
-- [ ] Multiple learning paths and difficulty levels
-- [ ] Voice interaction capabilities
-- [ ] Integration with external educational resources
-- [ ] Analytics and learning insights
-- [ ] Collaborative learning features
-- [ ] Offline mode support
-- [ ] Video integration (YouTube/Khan Academy)
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/ai-tutor-app&type=Date)](https://star-history.com/#yourusername/ai-tutor-app&Date)
-
----
-
-**Happy Learning! 🎓**
-
-Made with ❤️ by [Your Name] 
