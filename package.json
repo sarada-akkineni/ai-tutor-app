@@ -8,6 +8,7 @@
     "server": "cd server && npm run dev",
     "client": "cd client && npm start",
     "build": "cd client && npm install && npm run build",
+    "start": "npm run build && cd server && npm start",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install"
   },
   "keywords": ["ai", "education", "tutor", "learning"],

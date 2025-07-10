@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const OpenAI = require('openai');
 require('dotenv').config();
+const path = require('path'); // Added for static file serving
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -209,11 +210,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// For Vercel deployment
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`AI Tutor Server running on port ${PORT}`);
-  });
-}
+// Serve static files from React build
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`AI Tutor Server running on port ${PORT}`);
+});
 
 module.exports = app; 
