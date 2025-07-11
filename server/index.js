@@ -5,6 +5,7 @@ const rateLimit = require('express-rate-limit');
 const OpenAI = require('openai');
 require('dotenv').config();
 const path = require('path'); // Added for static file serving
+const quizRouter = require('./quiz');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -219,6 +220,7 @@ app.get('*', (req, res) => {
 });
 
 // Start server
+app.use('/api/quiz', quizRouter);
 app.listen(PORT, () => {
   console.log(`AI Tutor Server running on port ${PORT}`);
 });
